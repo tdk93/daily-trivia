@@ -4,4 +4,7 @@
 **/*.swp
 **/*.swn
 **/*.txt
-
+__pycache__/
+*.pyc
+*.pyo
+__pycache__/
