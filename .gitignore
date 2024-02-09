@@ -3,7 +3,6 @@
 **/*.swo
 **/*.swp
 **/*.swn
-**/*.txt
 __pycache__/
 *.pyc
 *.pyo
