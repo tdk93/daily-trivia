@@ -25,9 +25,10 @@ def show_question():
     ques_text = QAs[ques_index][0]
     return render_template('question.html',question=ques_text)
 
-@app.route('/giveanswer', methods=['GET'])
+@app.route('/giveanswer', methods=['POST'])
 def get_answer(response=None):
-    response = request.args.get('response')
+    response = request.form['answer']
+    print (projectpath)
     if response==QAs[CURRENT_QUES][1]:
         result=True
     else:

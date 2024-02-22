@@ -5,3 +5,9 @@
 {% else %}
   <h1>No question found :(</h1>
 {% endif %}
+
+<form action="{{ url_for('giveanswer') }}" method="post">
+    <input type="text" name="answer">
+    <input type="submit">
+</form>
+
