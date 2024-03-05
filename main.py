@@ -28,7 +28,6 @@ def show_question():
 @app.route('/giveanswer', methods=['POST'])
 def get_answer(response=None):
     response = request.form['answer']
-    print (projectpath)
     if response==QAs[CURRENT_QUES][1]:
         result=True
     else:
