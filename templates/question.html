@@ -6,7 +6,7 @@
   <h1>No question found :(</h1>
 {% endif %}
 
-<form action="{{ url_for('get_answer') }}" method="post">
+<form action="/giveanswer" method="post">
     <input type="text" name="answer">
     <input type="submit">
 </form>
