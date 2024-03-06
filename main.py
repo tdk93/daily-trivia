@@ -1,13 +1,12 @@
 from flask import Flask,render_template, request
+import question_processor
+import random 
 
 app = Flask(__name__)
 
-QUES1="What is the capital of India?"
-ANS1 = "Delhi"
-QAs = [(QUES1,ANS1)]
-CURRENT_QUES=0
+QAs = question_processor.GetQAs()
 
-
+current_index = random.randint(0,len(QAs)-1)
 
 @app.route('/')
 def hello():
@@ -21,20 +20,16 @@ def my_message(message=None):
 
 @app.route('/getques')
 def show_question():
-    ques_index = CURRENT_QUES
+    ques_index = current_index 
     ques_text = QAs[ques_index][0]
     return render_template('question.html',question=ques_text)
 
 @app.route('/giveanswer', methods=['POST'])
 def get_answer(response=None):
     response = request.form['answer']
-    if response==QAs[CURRENT_QUES][1]:
+    if response==QAs[current_index][1]: 
         result=True
     else:
         result=False
 
     return render_template('answer.html',result=result)
-
-
-
-
