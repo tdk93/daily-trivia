@@ -1,0 +1,4 @@
+*) Host the app in AWS
+*) Make the UX better
+*) Have a database for Ques
+*) Have the ability for people to add questions
